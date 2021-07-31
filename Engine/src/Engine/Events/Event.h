@@ -1,10 +1,9 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "Engine/Core.h"
+#include "ngpch.h"
 
-#include <string>
-#include <functional>
+#include "Engine/Core.h"
 
 namespace Engine
 {
