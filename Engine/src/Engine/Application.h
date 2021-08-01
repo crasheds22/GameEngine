@@ -3,6 +3,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace Engine {
 
@@ -13,6 +14,10 @@ namespace Engine {
 		virtual ~Application();
 
 		void Run();
+
+	private:
+		std::unique_ptr<Window> mWindow;
+		bool mRunning = true;
 	};
 
 	Application* CreateApplication();

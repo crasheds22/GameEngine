@@ -8,7 +8,9 @@ workspace "GameEngine"
 		"Dist"
 	}
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+	include "Engine/Vendor/GLFW"
 
 project "Engine"
 	location "Engine"
@@ -30,7 +32,14 @@ project "Engine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/Vendor/GLFW/include"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -77,7 +86,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Engine/vendor/spdlog/include",
+		"Engine/Vendor/spdlog/include",
 		"Engine/src"
 	}
 
