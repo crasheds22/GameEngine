@@ -2,10 +2,12 @@
 #define APPLICATION_H
 
 #include "Core.h"
-#include "Events/Event.h"
-#include "Engine/Events/ApplicationEvent.h"
 
 #include "Window.h"
+
+#include "Engine/LayerStack.h"
+#include "Engine/Events/Event.h"
+#include "Engine/Events/ApplicationEvent.h"
 
 namespace Engine {
 
@@ -19,11 +21,16 @@ namespace Engine {
 
 		void OnEvent(Event& event);
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& event);
 
 		std::unique_ptr<Window> mWindow;
 		bool mRunning = true;
+
+		LayerStack mLayerStack;
 	};
 
 	Application* CreateApplication();

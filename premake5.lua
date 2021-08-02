@@ -60,14 +60,17 @@ project "Engine"
 
 	filter "configurations:Debug"
 		defines "NG_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NG_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sandbox"
@@ -107,12 +110,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "NG_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NG_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
+		buildoptions "/MD"
 		symbols "On"

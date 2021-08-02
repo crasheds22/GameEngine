@@ -34,7 +34,6 @@ namespace Engine
 
 	class ENGINE_API Event
 	{
-		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* Name() const = 0;
@@ -46,8 +45,8 @@ namespace Engine
 			return CategoryFlags() & category;
 		}
 
-	protected:
-		bool mHandled;
+	public:
+		bool Handled;
 	};
 
 	class EventDispatcher
@@ -64,7 +63,7 @@ namespace Engine
 		{
 			if (mEvent.GetEventType() == T::StaticType())
 			{
-				mEvent.mHandled = func(*(T*)&mEvent);
+				mEvent.Handled = func(*(T*)&mEvent);
 				return true;
 			}
 			return false;

@@ -22,6 +22,9 @@ namespace Engine {
 	{
 		while (mRunning)
 		{
+			for (Layer* layer : mLayerStack)
+				layer->OnUpdate();
+
 			mWindow->OnUpdate();
 		}
 	}
@@ -31,7 +34,22 @@ namespace Engine {
 		EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		NG_CORE_INFO("{0}", event);
+		for (auto it = mLayerStack.end(); it != mLayerStack.begin(); )
+		{
+			(*--it)->OnEvent(event);
+			if (event.Handled)
+				break;
+		}
+	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		mLayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* layer)
+	{
+		mLayerStack.PushOverlay(layer);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& event)
