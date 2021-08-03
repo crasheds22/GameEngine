@@ -68,7 +68,7 @@ namespace Engine {
 
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         NG_CORE_ASSERT(status, "Failed to initialize GLAD");
-
+        
         glfwSetWindowUserPointer(mWindow, &mData);
         SetVSync(true);
 
