@@ -11,6 +11,7 @@ workspace "GameEngine"
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 	include "Engine/Vendor/GLFW"
+	include "Engine/Vendor/GLAD"
 
 project "Engine"
 	location "Engine"
@@ -33,12 +34,14 @@ project "Engine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/Vendor/GLFW/include"
+		"%{prj.name}/Vendor/GLFW/include",
+		"%{prj.name}/Vendor/GLAD/include"
 	}
 
 	links
 	{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -50,7 +53,8 @@ project "Engine"
 		defines 
 		{
 			"NG_PLATFORM_WINDOWS",
-			"NG_BUILD_DLL"
+			"NG_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

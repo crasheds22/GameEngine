@@ -3,7 +3,9 @@
 
 #include "Engine/Window.h"
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
 #include "Engine/Events/ApplicationEvent.h"
 #include "Engine/Events/MouseEvent.h"
 #include "Engine/Events/KeyEvent.h"
