@@ -3,6 +3,10 @@
 
 #include "Engine/Layer.h"
 
+#include "Engine/Events/ApplicationEvent.h"
+#include "Engine/Events/KeyEvent.h"
+#include "Engine/Events/MouseEvent.h"
+
 namespace Engine {
 
 	class ENGINE_API imguiLayer
@@ -16,6 +20,21 @@ namespace Engine {
 		void OnDetach();
 		void OnUpdate();
 		void OnEvent(Event& event);
+
+	private:
+		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& event);
+		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& event);
+		bool OnMouseMovedEvent(MouseMovedEvent& event);
+		bool OnMouseScrolledEvent(MouseScrolledEvent& event);
+
+		bool OnKeyTypedEvent(KeyTypedEvent& event);
+		bool OnKeyPressedEvent(KeyPressedEvent& event);
+		bool OnKeyReleasedEvent(KeyReleaseEvent& event);
+
+		bool OnWindowResizedEvent(WindowResizeEvent& event);
+
+	private:
+		float mTime = 0.0f;
 	};
 }
 

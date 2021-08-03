@@ -152,6 +152,13 @@ namespace Engine {
             MouseMovedEvent event((float)xPos, (float)yPos);
             data.EventCallback(event);
         });
+
+        glfwSetCharCallback(mWindow, [](GLFWwindow* window, unsigned int keycode) {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+            KeyTypedEvent event(keycode);
+            data.EventCallback(event);
+        });
     }
 
     void Engine::WindowsWindow::Shutdown()

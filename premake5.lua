@@ -10,9 +10,12 @@ workspace "GameEngine"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-	include "Engine/Vendor/GLFW"
-	include "Engine/Vendor/GLAD"
-	include "Engine/Vendor/imgui"
+	group "Dependencies"
+		include "Engine/Vendor/GLFW"
+		include "Engine/Vendor/GLAD"
+		include "Engine/Vendor/imgui"
+
+	group ""
 
 project "Engine"
 	location "Engine"
