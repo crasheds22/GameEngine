@@ -8,6 +8,10 @@
 	#endif
 #endif
 
+#ifdef NG_DEBUG
+	#define NG_ENABLE_ASSERTS
+#endif
+
 #ifdef NG_ENABLE_ASSERTS
 	#define NG_ASSERT(x, ...) { if (!(x)) { NG_ERROR("Assert failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define NG_CORE_ASSERT(x, ...) { if (!(x)) { NG_CORE_ERROR("Assert failed: {0}", __VA_ARGS__); __debugbreak(); } }

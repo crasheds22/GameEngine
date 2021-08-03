@@ -1,8 +1,8 @@
 workspace "GameEngine"
 	architecture "x64"
+	startproject "Sandbox"
 
-	configurations
-	{
+	configurations {
 		"Debug",
 		"Release",
 		"Dist"
@@ -21,6 +21,7 @@ project "Engine"
 	location "Engine"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -28,14 +29,12 @@ project "Engine"
 	pchheader "ngpch.h"
 	pchsource "Engine/src/ngpch.cpp"
 
-	files
-	{
+	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 	}
 
-	includedirs
-	{
+	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/Vendor/GLFW/include",
@@ -43,8 +42,7 @@ project "Engine"
 		"%{prj.name}/Vendor/imgui"
 	}
 
-	links
-	{
+	links {
 		"GLFW",
 		"GLAD",
 		"ImGui",
@@ -53,82 +51,75 @@ project "Engine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
-		defines 
-		{
+		defines {
 			"NG_PLATFORM_WINDOWS",
 			"NG_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
+		postbuildcommands {
 			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "NG_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NG_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		symbols "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 	}
 
-	includedirs
-	{
+	includedirs {
 		"Engine/Vendor/spdlog/include",
 		"Engine/src"
 	}
 
-	links
-	{
+	links {
 		"Engine"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
-		defines 
-		{
+		defines {
 			"NG_PLATFORM_WINDOWS",
 		}
 
 	filter "configurations:Debug"
 		defines "NG_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NG_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		symbols "On"
