@@ -165,4 +165,9 @@ namespace Engine {
     {
         glfwDestroyWindow(mWindow);
     }
+
+    void* WindowsWindow::NativeWindow() const
+    {
+        return mWindow;
+    }
 }
