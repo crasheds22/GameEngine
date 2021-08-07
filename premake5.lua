@@ -96,6 +96,7 @@ project "Sandbox"
 	includedirs {
 		"Engine/Vendor/spdlog/include",
 		"Engine/src",
+		"Engine/Vendor",
 		"%{prj.name}/Vendor/glm"
 	}
 

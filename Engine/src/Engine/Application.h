@@ -9,6 +9,8 @@
 #include "Engine/Events/Event.h"
 #include "Engine/Events/ApplicationEvent.h"
 
+#include "Engine/imgui/imguiLayer.h"
+
 namespace Engine {
 
 	class ENGINE_API Application
@@ -32,6 +34,8 @@ namespace Engine {
 		bool OnWindowClose(WindowCloseEvent& event);
 
 		std::unique_ptr<Window> mWindow;
+		imguiLayer* mImGuiLayer;
+
 		bool mRunning = true;
 
 		LayerStack mLayerStack;

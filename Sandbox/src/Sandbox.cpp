@@ -11,12 +11,16 @@ public:
 
 	}
 
-	void OnUpdate() override
+	virtual void OnUpdate() override
 	{
 		//NG_INFO("ExampleLayer::Update");
 	}
 
-	void OnEvent(Engine::Event& event) override
+	virtual void OnImGuiRender() override
+	{
+	}
+
+	virtual void OnEvent(Engine::Event& event) override
 	{
 		//NG_TRACE("{0}", event);
 	}
@@ -28,7 +32,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Engine::imguiLayer());
 	}
 
 	~Sandbox()
