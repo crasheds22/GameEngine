@@ -39,7 +39,8 @@ project "Engine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/Vendor/GLFW/include",
 		"%{prj.name}/Vendor/GLAD/include",
-		"%{prj.name}/Vendor/imgui"
+		"%{prj.name}/Vendor/imgui",
+		"%{prj.name}/Vendor/glm"
 	}
 
 	links {
@@ -94,7 +95,8 @@ project "Sandbox"
 
 	includedirs {
 		"Engine/Vendor/spdlog/include",
-		"Engine/src"
+		"Engine/src",
+		"%{prj.name}/Vendor/glm"
 	}
 
 	links {
