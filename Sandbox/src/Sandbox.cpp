@@ -13,12 +13,12 @@ public:
 
 	void OnUpdate() override
 	{
-		NG_INFO("ExampleLayer::Update");
+		//NG_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Engine::Event& event) override
 	{
-		NG_TRACE("{0}", event);
+		//NG_TRACE("{0}", event);
 	}
 };
 

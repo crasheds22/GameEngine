@@ -3,6 +3,10 @@
 
 #include "Engine/Log.h"
 
+#include <glad/glad.h>
+
+#include "Input.h"
+
 namespace Engine {
 
 	Application* Application::sInstance = nullptr;
@@ -25,6 +29,9 @@ namespace Engine {
 	{
 		while (mRunning)
 		{
+			glClearColor(0.5, 0.2, 0.2, 1.0);
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer* layer : mLayerStack)
 				layer->OnUpdate();
 
