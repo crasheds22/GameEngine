@@ -63,13 +63,11 @@ namespace Engine {
 	void Application::PushLayer(Layer* layer)
 	{
 		mLayerStack.PushLayer(layer);
-		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		mLayerStack.PushOverlay(layer);
-		layer->OnAttach();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& event)

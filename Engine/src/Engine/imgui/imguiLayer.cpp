@@ -75,7 +75,7 @@ namespace Engine {
 
 		Application& app = Application::Get();
 
-		io.DisplaySize = ImVec2(app.GetWindow().Width(), app.GetWindow().Height());
+		io.DisplaySize = ImVec2((float)app.GetWindow().Width(), (float)app.GetWindow().Height());
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
