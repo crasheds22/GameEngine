@@ -32,7 +32,7 @@ namespace Engine {
 	{
 		while (mRunning)
 		{
-			glClearColor(0.5, 0.2, 0.2, 1.0);
+			glClearColor(0.5f, 0.2f, 0.2f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : mLayerStack)
