@@ -3,7 +3,8 @@
 
 #include "Engine/Window.h"
 
-#include <glad/glad.h>
+#include "Engine/Renderer/GraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 #include "Engine/Events/ApplicationEvent.h"
@@ -36,6 +37,7 @@ namespace Engine {
 		virtual void Shutdown();
 
 		GLFWwindow* mWindow;
+		GraphicsContext* mContext;
 
 		struct WindowData
 		{

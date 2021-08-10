@@ -1,6 +1,8 @@
 #include "ngpch.h"
 #include "WindowsWindow.h"
 
+#include "Platform/OpenGL/OpenGLContext.h"
+
 namespace Engine {
 
     static bool sGLFWInitialized = false;
@@ -28,7 +30,7 @@ namespace Engine {
     void Engine::WindowsWindow::OnUpdate()
     {
         glfwPollEvents();
-        glfwSwapBuffers(mWindow);
+        mContext->SwapBuffers();
     }
 
     void Engine::WindowsWindow::SetVSync(bool enabled)
@@ -64,10 +66,9 @@ namespace Engine {
         }
 
         mWindow = glfwCreateWindow((int)props.Width, (int)props.Height, mData.Title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(mWindow);
-
-        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        NG_CORE_ASSERT(status, "Failed to initialize GLAD");
+        
+        mContext = new OpenGLContext(mWindow);
+        mContext->Init();
         
         glfwSetWindowUserPointer(mWindow, &mData);
         SetVSync(true);
