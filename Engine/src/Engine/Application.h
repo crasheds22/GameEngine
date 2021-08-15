@@ -11,6 +11,8 @@
 
 #include "Engine/imgui/imguiLayer.h"
 
+#include "Engine/Renderer/Shader.h"
+
 namespace Engine {
 
 	class ENGINE_API Application
@@ -41,6 +43,7 @@ namespace Engine {
 		LayerStack mLayerStack;
 
 		unsigned int mVAO, mVBO, mIBO;
+		std::unique_ptr<Shader> mShader;
 
 		static Application* sInstance;
 	};

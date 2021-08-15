@@ -45,6 +45,32 @@ namespace Engine {
 		unsigned int indices[3] = { 0, 1, 2 };
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+		std::string vertSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 aPosition;
+
+			out vec3 vPosition;
+
+			void main() {
+				vPosition = aPosition;
+				gl_Position = vec4(aPosition, 1.0);
+			}
+		)";
+
+		std::string fragSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec3 vPosition;
+
+			void main() {
+				color = vec4(vPosition * 0.5 + 0.5, 1.0);
+			}
+		)";
+
+		mShader.reset(new Shader(vertSrc, fragSrc));
 	}
 
 	Application::~Application()
@@ -58,6 +84,8 @@ namespace Engine {
 		{
 			glClearColor(0.5f, 0.2f, 0.2f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			mShader->Bind();
 
 			glBindVertexArray(mVAO);
 			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);

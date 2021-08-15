@@ -26,10 +26,12 @@ namespace Engine {
 #define NG_CORE_WARN(...)	::Engine::Log::CoreLogger()->warn(__VA_ARGS__)
 #define NG_CORE_INFO(...)	::Engine::Log::CoreLogger()->info(__VA_ARGS__)
 #define NG_CORE_TRACE(...)	::Engine::Log::CoreLogger()->trace(__VA_ARGS__)
+#define NG_CORE_FATAL(...)	::Engine::Log::CoreLogger()->critical(__VA_ARGS__)
 
 #define NG_ERROR(...)	::Engine::Log::ClientLogger()->error(__VA_ARGS__)
 #define NG_WARN(...)	::Engine::Log::ClientLogger()->warn(__VA_ARGS__)
 #define NG_INFO(...)	::Engine::Log::ClientLogger()->info(__VA_ARGS__)
 #define NG_TRACE(...)	::Engine::Log::ClientLogger()->trace(__VA_ARGS__)
+#define NG_FATAL(...)	::Engine::Log::ClientLogger()->critical(__VA_ARGS__)
 
 #endif

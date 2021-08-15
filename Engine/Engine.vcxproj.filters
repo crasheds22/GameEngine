@@ -1356,6 +1356,7 @@
     <ClInclude Include="src\ngpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Application.cpp">
@@ -1388,5 +1389,6 @@
     <ClCompile Include="src\ngpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>
