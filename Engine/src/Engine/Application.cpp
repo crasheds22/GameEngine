@@ -69,11 +69,6 @@ namespace Engine {
 		mShader.reset(new Shader(vertSrc, fragSrc));
 	}
 
-	Application::~Application()
-	{
-
-	}
-
 	void Application::Run()
 	{
 		while (mRunning)

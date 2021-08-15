@@ -14,7 +14,7 @@ namespace Engine {
 	{
 	public:
 		imguiLayer();
-		~imguiLayer();
+		~imguiLayer() = default;
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
