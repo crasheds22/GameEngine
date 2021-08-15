@@ -13,7 +13,6 @@ public:
 
 	virtual void OnUpdate() override
 	{
-		//NG_INFO("ExampleLayer::Update");
 	}
 
 	virtual void OnImGuiRender() override
@@ -22,7 +21,6 @@ public:
 
 	virtual void OnEvent(Engine::Event& event) override
 	{
-		//NG_TRACE("{0}", event);
 	}
 };
 

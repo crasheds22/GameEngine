@@ -40,6 +40,8 @@ namespace Engine {
 
 		LayerStack mLayerStack;
 
+		unsigned int mVAO, mVBO, mIBO;
+
 		static Application* sInstance;
 	};
 
