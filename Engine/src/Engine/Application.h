@@ -12,6 +12,7 @@
 #include "Engine/imgui/imguiLayer.h"
 
 #include "Engine/Renderer/Shader.h"
+#include "Engine/Renderer/Buffer.h"
 
 namespace Engine {
 
@@ -42,8 +43,10 @@ namespace Engine {
 
 		LayerStack mLayerStack;
 
-		unsigned int mVAO, mVBO, mIBO;
+		unsigned int mVAO;
 		std::unique_ptr<Shader> mShader;
+		std::unique_ptr<VertexBuffer> mVertexBuffer;
+		std::unique_ptr<IndexBuffer> mIndexBuffer;
 
 		static Application* sInstance;
 	};
