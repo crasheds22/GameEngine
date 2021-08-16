@@ -15,8 +15,12 @@ namespace Engine {
 		virtual void Bind() const override;
 		virtual void Unbind() const override;
 
+		virtual const BufferLayout& Layout() const override { return mLayout; }
+		virtual void Layout(const BufferLayout& layout) override { mLayout = layout; }
+
 	private:
 		uint32_t mRendererID;
+		BufferLayout mLayout;
 	};
 
 	class OpenGLIndexBuffer
