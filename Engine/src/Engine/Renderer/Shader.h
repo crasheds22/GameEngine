@@ -12,10 +12,10 @@ namespace Engine {
 		~Shader();
 
 		void Bind() const;
-		void unbind() const;
+		void Unbind() const;
 
 	private:
-		uint32_t mRendererID;
+		uint32_t mRendererID = 0;
 
 	};
 }

@@ -13,6 +13,7 @@
 
 #include "Engine/Renderer/Shader.h"
 #include "Engine/Renderer/Buffer.h"
+#include "Engine/Renderer/VertexArray.h"
 
 namespace Engine {
 
@@ -43,10 +44,8 @@ namespace Engine {
 
 		LayerStack mLayerStack;
 
-		unsigned int mVAO;
 		std::unique_ptr<Shader> mShader;
-		std::unique_ptr<VertexBuffer> mVertexBuffer;
-		std::unique_ptr<IndexBuffer> mIndexBuffer;
+		std::unique_ptr<VertexArray> mVertexArray;
 
 		static Application* sInstance;
 	};

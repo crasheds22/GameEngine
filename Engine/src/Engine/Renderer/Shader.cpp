@@ -119,7 +119,7 @@ namespace Engine {
 		glUseProgram(mRendererID);
 	}
 
-	void Shader::unbind() const
+	void Shader::Unbind() const
 	{
 		glUseProgram(0);
 	}

@@ -11,24 +11,6 @@ namespace Engine {
 
 	Application* Application::sInstance = nullptr;
 
-	static GLenum Convert(ShaderDataType type)
-	{
-		switch (type)
-		{
-			case ShaderDataType::Float:		return GL_FLOAT;
-			case ShaderDataType::Float2:	return GL_FLOAT;
-			case ShaderDataType::Float3:	return GL_FLOAT;
-			case ShaderDataType::Float4:	return GL_FLOAT;
-			case ShaderDataType::Mat3:		return GL_FLOAT;
-			case ShaderDataType::Mat4:		return GL_FLOAT;
-			case ShaderDataType::Int:		return GL_INT;
-			case ShaderDataType::Int2:		return GL_INT;
-			case ShaderDataType::Int3:		return GL_INT;
-			case ShaderDataType::Int4:		return GL_INT;
-			case ShaderDataType::Bool:		return GL_BOOL;
-		}
-	}
-
 	Application::Application()
 	{
 		NG_CORE_ASSERT(!sInstance, "Application already exists");
@@ -40,8 +22,7 @@ namespace Engine {
 		mImGuiLayer = new imguiLayer();
 		PushOverlay(mImGuiLayer);
 
-		glGenVertexArrays(1, &mVAO);
-		glBindVertexArray(mVAO);
+		mVertexArray.reset(VertexArray::Create());
 
 		float vertices[3 * 7] = {
 			-0.5, -0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f,
@@ -49,32 +30,22 @@ namespace Engine {
 			0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
 		};
 
-		mVertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
+		std::shared_ptr<VertexBuffer> vertexBuffer;
+		vertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		BufferLayout layout = {
 			{ShaderDataType::Float3, "aPosition"},
 			{ShaderDataType::Float4, "aColour"}
 		};
 
-		mVertexBuffer->Layout(layout);
-
-		uint32_t index = 0;
-		for (const auto& element : mVertexBuffer->Layout())
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(index, 
-				element.ComponentCount(), 
-				Convert(element.Type), 
-				element.Normalized ? GL_TRUE : GL_FALSE, 
-				layout.Stride(), 
-				(const void*)element.Offset);
-			index++;
-		}
-
+		vertexBuffer->Layout(layout);
+		mVertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
 
-		mIndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		std::shared_ptr<IndexBuffer> indexBuffer;
+		indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		mVertexArray->AddIndexBuffer(indexBuffer);
 
 		std::string vertSrc = R"(
 			#version 330 core
@@ -117,8 +88,8 @@ namespace Engine {
 
 			mShader->Bind();
 
-			glBindVertexArray(mVAO);
-			glDrawElements(GL_TRIANGLES, mIndexBuffer->Count(), GL_UNSIGNED_INT, nullptr);
+			mVertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, mVertexArray->GetIndexBuffer()->Count(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : mLayerStack)
 				layer->OnUpdate();
