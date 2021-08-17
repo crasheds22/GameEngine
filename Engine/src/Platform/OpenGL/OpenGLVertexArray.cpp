@@ -31,6 +31,11 @@ namespace Engine {
 		glCreateVertexArrays(1, &mRendererID);
 	}
 
+	OpenGLVertexArray::~OpenGLVertexArray()
+	{
+		glDeleteBuffers(1, &mRendererID);
+	}
+
 	void OpenGLVertexArray::Bind() const
 	{
 		glBindVertexArray(mRendererID);
