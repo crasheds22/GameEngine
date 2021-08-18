@@ -44,8 +44,8 @@ namespace Engine {
 
 		LayerStack mLayerStack;
 
-		std::unique_ptr<Shader> mShader;
-		std::unique_ptr<VertexArray> mVertexArray;
+		std::shared_ptr<Shader> mShader;
+		std::shared_ptr<VertexArray> mVertexArray;
 
 		static Application* sInstance;
 	};

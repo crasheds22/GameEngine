@@ -1,21 +1,21 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-namespace Engine {
+#include "RenderCommand.h"
 
-	enum class RendererAPI
-	{
-		None = 0,
-		OpenGL = 1
-	};
+namespace Engine {
 
 	class Renderer
 	{
 	public:
-		static RendererAPI Get() { return sRendererAPI; }
+		static void BeginScene();
+		static void EndScene();
+
+		static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+
+		static RendererAPI::API Get() { return RendererAPI::GetAPI(); }
 
 	private:
-		static RendererAPI sRendererAPI;
 	};
 }
 
