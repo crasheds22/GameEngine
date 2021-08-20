@@ -12,6 +12,7 @@ namespace Engine {
 	Application* Application::sInstance = nullptr;
 
 	Application::Application()
+		: mCamera(-1.6f, 1.6f, -0.9f, 0.9f)
 	{
 		NG_CORE_ASSERT(!sInstance, "Application already exists");
 		sInstance = this;
@@ -53,13 +54,15 @@ namespace Engine {
 			layout(location = 0) in vec3 aPosition;
 			layout(location = 1) in vec4 aColour;
 
+			uniform mat4 uViewProjection;
+
 			out vec3 vPosition;
 			out vec4 vColour;
 
 			void main() {
 				vPosition = aPosition;
 				vColour = aColour;
-				gl_Position = vec4(aPosition, 1.0);
+				gl_Position = uViewProjection * vec4(aPosition, 1.0);
 			}
 		)";
 
@@ -86,10 +89,12 @@ namespace Engine {
 			RenderCommand::ClearColour( { 0.2f, 0.2f, 0.2f, 1.0f } );
 			RenderCommand::Clear();
 
-			Renderer::BeginScene();
+			mCamera.Position({ 0.5f, 0.5f, 0.0f });
+			mCamera.Rotation(45.0f);
 
-			mShader->Bind();
-			Renderer::Submit(mVertexArray);
+			Renderer::BeginScene(mCamera);
+
+			Renderer::Submit(mShader, mVertexArray);
 
 			Renderer::EndScene();
 
