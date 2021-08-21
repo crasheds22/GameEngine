@@ -18,19 +18,10 @@ namespace Engine {
 		static RendererAPI::API Get() { return RendererAPI::GetAPI(); }
 
 	private:
-<<<<<<< HEAD
 		struct SceneData {
-=======
-		struct SceneData
-		{
->>>>>>> main
 			glm::mat4 ViewProjection;
 		};
 
 		static SceneData* sSceneData;
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 	};
 }

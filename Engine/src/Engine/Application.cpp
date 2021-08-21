@@ -89,22 +89,12 @@ namespace Engine {
 			RenderCommand::ClearColour( { 0.2f, 0.2f, 0.2f, 1.0f } );
 			RenderCommand::Clear();
 
-<<<<<<< HEAD
 			mCamera.Position( { 0.5f, 0.5f, 0.0f } );
-=======
-			mCamera.Position({ 0.5f, 0.5f, 0.0f });
->>>>>>> main
 			mCamera.Rotation(45.0f);
 
 			Renderer::BeginScene(mCamera);
 
-<<<<<<< HEAD
-			mShader->Bind();
-			mShader->Uniform("uViewProjection", mCamera.ViewProjection());
-			Renderer::Submit(mVertexArray);
-=======
 			Renderer::Submit(mShader, mVertexArray);
->>>>>>> main
 
 			Renderer::EndScene();
 
