@@ -1,5 +1,4 @@
-#ifndef MOUSEEVENT_H
-#define MOUSEEVENT_H
+#pragma once
 
 #include "Event.h"
 
@@ -109,5 +108,3 @@ namespace Engine {
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
 }
-
-#endif

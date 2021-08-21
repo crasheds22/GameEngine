@@ -1,5 +1,4 @@
-#ifndef APPLICATION_H
-#define APPLICATION_H
+#pragma once
 
 #include "Core.h"
 
@@ -56,5 +55,3 @@ namespace Engine {
 
 	Application* CreateApplication();
 }
-
-#endif

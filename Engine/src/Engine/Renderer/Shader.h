@@ -1,9 +1,7 @@
-#ifndef SHADER_H
-#define SHADER_H
+#pragma once
 
 #include <string>
-// TODO: Fuckin fix this shit
-#include <../Vendor/glm/glm/glm.hpp>
+#include <glm/glm.hpp>
 
 namespace Engine {
 
@@ -17,10 +15,8 @@ namespace Engine {
 		void Unbind() const;
 
 		void Uniform(const std::string& name, const glm::mat4& matrix);
-
 	private:
 		uint32_t mRendererID = 0;
 
 	};
 }
-#endif

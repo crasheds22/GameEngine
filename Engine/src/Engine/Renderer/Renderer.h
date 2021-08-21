@@ -1,5 +1,4 @@
-#ifndef RENDERER_H
-#define RENDERER_H
+#pragma once
 
 #include "RenderCommand.h"
 
@@ -19,14 +18,10 @@ namespace Engine {
 		static RendererAPI::API Get() { return RendererAPI::GetAPI(); }
 
 	private:
-		struct SceneData
-		{
+		struct SceneData {
 			glm::mat4 ViewProjection;
 		};
 
 		static SceneData* sSceneData;
-
 	};
 }
-
-#endif

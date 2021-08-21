@@ -1,5 +1,4 @@
-#ifndef OPENGL_BUFFER_H
-#define OPENGL_BUFFER_H
+#pragma once
 
 #include "Engine/Renderer/Buffer.h"
 
@@ -40,5 +39,3 @@ namespace Engine {
 		uint32_t mCount;
 	};
 }
-
-#endif

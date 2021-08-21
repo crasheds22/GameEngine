@@ -1,5 +1,4 @@
-#ifndef GRAPHICS_CONTEXT_H
-#define GRAPHICS_CONTEXT_H
+#pragma once
 
 namespace Engine {
 
@@ -11,5 +10,3 @@ namespace Engine {
 
 	};
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef RENDERCOMMAND_H
-#define RENDERCOMMAND_H
+#pragma once
 
 #include "RendererAPI.h"
 
@@ -16,5 +15,3 @@ namespace Engine {
 		static RendererAPI* sRendererAPI;
 	};
 }
-
-#endif // 

@@ -89,7 +89,7 @@ namespace Engine {
 			RenderCommand::ClearColour( { 0.2f, 0.2f, 0.2f, 1.0f } );
 			RenderCommand::Clear();
 
-			mCamera.Position({ 0.5f, 0.5f, 0.0f });
+			mCamera.Position( { 0.5f, 0.5f, 0.0f } );
 			mCamera.Rotation(45.0f);
 
 			Renderer::BeginScene(mCamera);

@@ -1,5 +1,4 @@
-#ifndef WINDOW_H
-#define WINDOW_H
+#pragma once
 
 #include "ngpch.h"
 
@@ -42,5 +41,3 @@ namespace Engine {
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 }
-
-#endif

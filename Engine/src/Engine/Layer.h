@@ -1,5 +1,4 @@
-#ifndef LAYER_H
-#define LAYER_H
+#pragma once
 
 #include "Engine/Core.h"
 #include "Engine/Events/Event.h"
@@ -24,5 +23,3 @@ namespace Engine {
 		std::string mDebugName;
 	};
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef WINDOWS_INPUT_H
-#define WINDOWS_INPUT_H
+#pragma once
 
 #include "Engine/Input.h"
 
@@ -17,5 +16,3 @@ namespace Engine {
 
 	};
 }
-
-#endif

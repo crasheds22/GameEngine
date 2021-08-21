@@ -1,5 +1,4 @@
-#ifndef INPUT_H
-#define INPUT_H
+#pragma once
 
 #include "Engine/Core.h"
 
@@ -24,5 +23,3 @@ namespace Engine {
 		static Input* sInstance;
 	};
 }
-
-#endif

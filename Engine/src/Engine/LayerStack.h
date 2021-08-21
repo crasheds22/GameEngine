@@ -1,5 +1,4 @@
-#ifndef LAYER_STACK_H
-#define LAYER_STACK_H
+#pragma once
 
 #include "Engine/Core.h"
 #include "Layer.h"
@@ -26,5 +25,3 @@ namespace Engine {
 		unsigned int mLayerInsertIndex = 0;
 	};
 }
-
-#endif

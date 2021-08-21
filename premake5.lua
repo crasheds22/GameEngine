@@ -10,6 +10,12 @@ workspace "GameEngine"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	IncludeDir = {}
+	IncludeDir["GLFW"]	= "Engine/Vendor/GLFW/include"
+	IncludeDir["Glad"]	= "Engine/Vendor/glad/include"
+	IncludeDir["ImGui"] = "Engine/Vendor/imgui"
+	IncludeDir["glm"]	= "Engine/Vendor/glm"
+
 	group "Dependencies"
 		include "Engine/Vendor/GLFW"
 		include "Engine/Vendor/GLAD"
@@ -44,10 +50,10 @@ project "Engine"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/Vendor/GLFW/include",
-		"%{prj.name}/Vendor/GLAD/include",
-		"%{prj.name}/Vendor/imgui",
-		"%{prj.name}/Vendor/glm"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links {
@@ -74,12 +80,12 @@ project "Engine"
 	filter "configurations:Release"
 		defines "NG_RELEASE"
 		runtime "Release"
-		symbols "on"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
 		runtime "Release"
-		symbols "on"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
@@ -100,7 +106,7 @@ project "Sandbox"
 		"Engine/Vendor/spdlog/include",
 		"Engine/src",
 		"Engine/Vendor",
-		"%{prj.name}/Vendor/glm"
+		"Engine/Vendor/glm"
 	}
 
 	links {
@@ -122,9 +128,9 @@ project "Sandbox"
 	filter "configurations:Release"
 		defines "NG_RELEASE"
 		runtime "Release"
-		symbols "on"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "NG_DIST"
 		runtime "Release"
-		symbols "on"
+		optimize "on"

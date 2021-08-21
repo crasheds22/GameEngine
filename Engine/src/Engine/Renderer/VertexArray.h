@@ -1,5 +1,4 @@
-#ifndef VERTEX_ARRAY_H
-#define VERTEX_ARRAY_H
+#pragma once
 
 #include "Engine/Renderer/Buffer.h"
 
@@ -22,5 +21,3 @@ namespace Engine {
 		static VertexArray* Create();
 	};
 }
-
-#endif // ifndef VERTEX_ARRAY_H

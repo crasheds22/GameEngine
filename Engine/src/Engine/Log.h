@@ -1,5 +1,4 @@
-#ifndef LOG_H
-#define LOG_H
+#pragma once
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
@@ -33,5 +32,3 @@ namespace Engine {
 #define NG_INFO(...)	::Engine::Log::ClientLogger()->info(__VA_ARGS__)
 #define NG_TRACE(...)	::Engine::Log::ClientLogger()->trace(__VA_ARGS__)
 #define NG_FATAL(...)	::Engine::Log::ClientLogger()->critical(__VA_ARGS__)
-
-#endif
