@@ -14,6 +14,8 @@
 #include "Engine/Renderer/Buffer.h"
 #include "Engine/Renderer/VertexArray.h"
 
+#include "Engine/Renderer/OrthographicCamera.h"
+
 namespace Engine {
 
 	class ENGINE_API Application
@@ -45,6 +47,8 @@ namespace Engine {
 
 		std::shared_ptr<Shader> mShader;
 		std::shared_ptr<VertexArray> mVertexArray;
+
+		OrthographicCamera mCamera;
 
 		static Application* sInstance;
 	};

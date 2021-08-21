@@ -1383,6 +1383,7 @@
     <ClInclude Include="src\ngpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Application.cpp">
@@ -1442,5 +1443,6 @@
     <ClCompile Include="src\ngpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

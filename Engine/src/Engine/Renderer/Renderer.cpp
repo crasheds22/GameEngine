@@ -3,9 +3,11 @@
 
 namespace Engine {
 
-	void Renderer::BeginScene()
-	{
+	Renderer::SceneData* Renderer::sSceneData = new Renderer::SceneData;
 
+	void Renderer::BeginScene(OrthographicCamera& camera)
+	{
+		sSceneData->ViewProjection = camera.ViewProjection();
 	}
 
 	void Renderer::EndScene()

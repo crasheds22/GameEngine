@@ -14,6 +14,7 @@ namespace Engine {
 		void Bind() const;
 		void Unbind() const;
 
+		void Uniform(const std::string& name, const glm::mat4& matrix);
 	private:
 		uint32_t mRendererID = 0;
 
