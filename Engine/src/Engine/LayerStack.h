@@ -3,8 +3,6 @@
 #include "Engine/Core.h"
 #include "Layer.h"
 
-#include <vector>
-
 namespace Engine {
 
 	class ENGINE_API LayerStack

@@ -13,15 +13,24 @@ namespace Engine {
 		static void BeginScene(OrthographicCamera& camera);
 		static void EndScene();
 
-		static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+		static void Submit(const std::shared_ptr<Shader>& shaders, const std::shared_ptr<VertexArray>& vertexArray);
 
 		static RendererAPI::API Get() { return RendererAPI::GetAPI(); }
 
 	private:
+<<<<<<< HEAD
 		struct SceneData {
+=======
+		struct SceneData
+		{
+>>>>>>> main
 			glm::mat4 ViewProjection;
 		};
 
 		static SceneData* sSceneData;
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 	};
 }

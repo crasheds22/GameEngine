@@ -1341,6 +1341,12 @@
     <ClInclude Include="src\Engine\Renderer\GraphicsContext.h">
       <Filter>src\Engine\Renderer</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="src\Engine\Renderer\OrthographicCamera.h">
+      <Filter>src\Engine\Renderer</Filter>
+    </ClInclude>
+>>>>>>> main
     <ClInclude Include="src\Engine\Renderer\RenderCommand.h">
       <Filter>src\Engine\Renderer</Filter>
     </ClInclude>
@@ -1383,7 +1389,10 @@
     <ClInclude Include="src\ngpch.h">
       <Filter>src</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="src\Engine\Renderer\OrthographicCamera.h" />
+=======
+>>>>>>> main
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Application.cpp">
@@ -1401,6 +1410,12 @@
     <ClCompile Include="src\Engine\Renderer\Buffer.cpp">
       <Filter>src\Engine\Renderer</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="src\Engine\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Engine\Renderer</Filter>
+    </ClCompile>
+>>>>>>> main
     <ClCompile Include="src\Engine\Renderer\RenderCommand.cpp">
       <Filter>src\Engine\Renderer</Filter>
     </ClCompile>
@@ -1443,6 +1458,9 @@
     <ClCompile Include="src\ngpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="src\Engine\Renderer\OrthographicCamera.cpp" />
+=======
+>>>>>>> main
   </ItemGroup>
 </Project>
