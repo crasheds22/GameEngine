@@ -1,5 +1,4 @@
-#ifndef BUFFER_H_INCLUDED
-#define BUFFER_H_INCLUDED
+#pragma once
 
 namespace Engine {
 
@@ -138,5 +137,3 @@ namespace Engine {
 	};
 
 }
-
-#endif

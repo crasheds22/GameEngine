@@ -1,7 +1,7 @@
-#ifndef SHADER_H
-#define SHADER_H
+#pragma once
 
 #include <string>
+#include <glm/glm.hpp>
 
 namespace Engine {
 
@@ -19,4 +19,3 @@ namespace Engine {
 
 	};
 }
-#endif

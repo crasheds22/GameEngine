@@ -1,5 +1,4 @@
-#ifndef IMGUI_LAYER_H
-#define IMGUI_LAYER_H
+#pragma once
 
 #include "Engine/Layer.h"
 
@@ -27,5 +26,3 @@ namespace Engine {
 		float mTime = 0.0f;
 	};
 }
-
-#endif

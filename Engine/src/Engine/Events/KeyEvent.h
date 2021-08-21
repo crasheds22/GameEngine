@@ -1,5 +1,4 @@
-#ifndef KEYEVENT_H
-#define KEYEVENT_H
+#pragma once
 
 #include "Event.h"
 
@@ -80,5 +79,3 @@ namespace Engine {
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
 }
-
-#endif

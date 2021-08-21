@@ -1,5 +1,4 @@
-#ifndef KEY_CODES_H
-#define KEY_CODES_H
+#pragma once
 
 #define NG_KEY_SPACE              32
 #define NG_KEY_APOSTROPHE         39  /* ' */
@@ -123,5 +122,3 @@
 #define NG_KEY_RIGHT_ALT          346
 #define NG_KEY_RIGHT_SUPER        347
 #define NG_KEY_MENU               348
-
-#endif

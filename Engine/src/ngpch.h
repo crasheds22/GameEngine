@@ -1,5 +1,4 @@
-#ifndef NGPCH_H
-#define NGPCH_H
+#pragma once
 
 #include <iostream>
 #include <memory>
@@ -17,6 +16,4 @@
 
 #ifdef NG_PLATFORM_WINDOWS
 	#include <Windows.h>
-#endif
-
 #endif

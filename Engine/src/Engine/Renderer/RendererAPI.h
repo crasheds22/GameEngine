@@ -1,5 +1,4 @@
-#ifndef RENDERER_API_H
-#define RENDERER_API_H
+#pragma once
 
 #include <glm/glm.hpp>
 
@@ -26,5 +25,3 @@ namespace Engine {
 		static API sAPI;
 	};
 }
-
-#endif // #define RENDERER_API_H

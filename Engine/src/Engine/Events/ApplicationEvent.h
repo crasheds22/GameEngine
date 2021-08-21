@@ -1,5 +1,4 @@
-#ifndef APPLICATION_EVENT_H
-#define APPLICATION_EVENT_H
+#pragma once
 
 #include "Event.h"
 
@@ -71,5 +70,3 @@ namespace Engine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }
-
-#endif

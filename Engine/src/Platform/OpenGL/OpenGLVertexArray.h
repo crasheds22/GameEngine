@@ -1,5 +1,4 @@
-#ifndef OPENGL_VERTEX_ARRAY_H
-#define OPENGL_VERTEX_ARRAY_H
+#pragma once
 
 #include "Engine/Renderer/VertexArray.h"
 
@@ -28,5 +27,3 @@ namespace Engine {
 		std::shared_ptr<IndexBuffer> mIndexBuffers;
 	};
 }
-
-#endif

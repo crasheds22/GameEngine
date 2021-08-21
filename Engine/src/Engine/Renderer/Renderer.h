@@ -1,5 +1,4 @@
-#ifndef RENDERER_H
-#define RENDERER_H
+#pragma once
 
 #include "RenderCommand.h"
 
@@ -18,5 +17,3 @@ namespace Engine {
 	private:
 	};
 }
-
-#endif

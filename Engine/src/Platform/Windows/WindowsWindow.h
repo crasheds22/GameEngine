@@ -1,5 +1,4 @@
-#ifndef WINDOWS_WINDOW_H
-#define WINDOWS_WINDOW_H
+#pragma once
 
 #include "Engine/Window.h"
 
@@ -51,4 +50,3 @@ namespace Engine {
 		WindowData mData;
 	};
 }
-#endif
